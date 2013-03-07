@@ -29,7 +29,10 @@ describe 'Human' do
       expect(human.last_error).to eq 'fitness level must be above 1'
     end
 
-    it 'must be below 5'
+    it 'must be below 5' do
+      human = Human.new('Unfit', 90, 5.3, 7)
+      expect(human.last_error).to eq 'fitness level must be below 5'
+    end
   end
 end
 
