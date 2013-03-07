@@ -13,6 +13,8 @@ class Human
     @weight = weight
     @height = height
     @fitness_level = fitness_level
+
+    valid?
   end
 
   def fitness_level_valid?(fitness_level)

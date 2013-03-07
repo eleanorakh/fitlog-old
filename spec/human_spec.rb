@@ -22,6 +22,15 @@ describe 'Human' do
       expect(@human.fitness_level).to eq 1
     end
   end
+
+  describe 'fitness level' do
+    it 'must be above 1' do
+      human = Human.new('Unfit', 90, 5.3, 0)
+      expect(human.last_error).to eq 'fitness level must be above 1'
+    end
+
+    it 'must be below 5'
+  end
 end
 
 # DRY: Don't Repeat Yourself
