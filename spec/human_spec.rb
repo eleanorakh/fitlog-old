@@ -34,6 +34,20 @@ describe 'Human' do
       expect(human.last_error).to eq 'fitness level must be below 5'
     end
   end
+
+  describe 'last error' do
+    it 'returns the last error' do
+      human = Human.new('Unfit', 90, 5.3, 7)
+      # checks valid? when we call .new
+      # => ['fitness level must be below 5']
+
+      human.fitness_level = 0
+      human.valid?
+      # => ['fitness level must be below 5', 'fitness level must be above 1']
+
+      expect(human.last_error).to eq human.errors.last
+    end
+  end
 end
 
 # DRY: Don't Repeat Yourself
