@@ -1,11 +1,14 @@
 # classes are a way of organising code.
 # variable always lower case
 class Points
+  attr_reader :errors
+
   def initialize(human)
     # instance variables starting with @ (shared in the class)
     @human = human
 
     @total_points = 0
+    @errors = []
   end
 
   #                        arguments
@@ -22,15 +25,20 @@ class Points
     # we pull stuff out of hashes using []
     points = values[exercise]
 
-    # times the points by the number of minutes
-    # Can create a variable with =
-    calculated_points = points * minutes
+    if points.nil?
+      @errors << 'exercise invalid'
+      false
+    else
+      # times the points by the number of minutes
+      # Can create a variable with =
+      calculated_points = points * minutes
 
-    # += adds numbers to the variable
-    @total_points += calculated_points
+      # += adds numbers to the variable
+      @total_points += calculated_points
 
-    # method outputs (returns) the last line
-    calculated_points
+      # method outputs (returns) the last line
+      calculated_points
+    end
   end
 
   def total_points
