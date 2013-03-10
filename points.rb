@@ -22,7 +22,7 @@ class Points
     # we pull stuff out of hashes using []
     points = values[exercise]
 
-    # times the points by the number of minutes 
+    # times the points by the number of minutes
     # Can create a variable with =
     calculated_points = points * minutes
 
@@ -34,7 +34,7 @@ class Points
   end
 
   def total_points
-    'Total points for ' + @human.name + ': ' + @total_points.to_s  
+    'Total points for ' + @human.name + ': ' + @total_points.to_s
   end
 end
 # always line break at end of file
