@@ -34,7 +34,7 @@ class Points
   end
 
   def total_points
-    'Total points for ' + @human.name + ': ' + @total_points.to_s
+    "Total points for #{@human.name}: #{@total_points.to_s}"
   end
 end
 # always line break at end of file
