@@ -43,8 +43,7 @@ class Human
   end
 
   def clear_errors
-    if valid?
-      @errors = []
-    end
+    @errors = []
+    valid?
   end
 end

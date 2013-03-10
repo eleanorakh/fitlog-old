@@ -48,6 +48,18 @@ describe 'Human' do
       expect(human.last_error).to eq human.errors.last
     end
   end
+
+  describe 'clear errors' do
+    it 'clears all errors' do
+      human = Human.new('Error', 60, 5.5, 8)
+      human.clear_errors
+      expect(human.errors).to eq ['fitness level must be below 5']
+
+      human.fitness_level = 4
+      human.clear_errors
+      expect(human.errors).to eq []
+    end
+  end
 end
 
 # DRY: Don't Repeat Yourself
