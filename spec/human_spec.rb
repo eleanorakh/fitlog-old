@@ -26,11 +26,13 @@ describe 'Human' do
   describe 'fitness level' do
     it 'must be above 1' do
       human = Human.new('Unfit', 90, 5.3, 0)
+      human.valid?
       expect(human.last_error).to eq 'fitness level must be above 1'
     end
 
     it 'must be below 5' do
       human = Human.new('Unfit', 90, 5.3, 7)
+      human.valid?
       expect(human.last_error).to eq 'fitness level must be below 5'
     end
   end
@@ -38,12 +40,14 @@ describe 'Human' do
   describe 'last error' do
     it 'returns the last error' do
       human = Human.new('Unfit', 90, 5.3, 7)
-      # checks valid? when we call .new
+      human.valid?
       # => ['fitness level must be below 5']
+      expect(human.errors.count).to eq 1
 
       human.fitness_level = 0
       human.valid?
       # => ['fitness level must be below 5', 'fitness level must be above 1']
+      expect(human.errors.count).to eq 2
 
       expect(human.last_error).to eq human.errors.last
     end
