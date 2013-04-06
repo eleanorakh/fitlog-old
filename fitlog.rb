@@ -8,10 +8,14 @@ require 'human'
 
 DataMapper.finalize.auto_upgrade!
 
-get '/name/:name' do
-  human = Human.new(params[:name], 1, 1, 1)
+get '/new' do
+  erb :new
+end
+
+post '/create' do
+  human = Human.new(params)
   human.save
-  "Name: #{human.name}"
+  redirect "/human/#{human.id}"
 end
 
 get '/human/:id' do
