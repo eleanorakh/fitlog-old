@@ -4,7 +4,7 @@ class Human
   property :id, Serial
   property :name, String
   property :weight, Integer
-  property :height, Integer
+  property :height, Float
   property :fitness_level, Integer
 
   validates_presence_of :fitness_level
