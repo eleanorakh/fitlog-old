@@ -13,3 +13,8 @@ get '/name/:name' do
   human.save
   "Name: #{human.name}"
 end
+
+get '/human/:id' do
+  @human = Human.get(params[:id])
+  erb :show
+end
