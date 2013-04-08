@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-
-<html>
-  <head>
-    <link rel=stylesheet type=text/css href=reset.css>
-    <link rel=stylesheet type=text/css href=style.css>
-  </head>
-
-  <body>
-    <div id='wrap'>
-      <ul>
-        <% Human.all.each do |human| %>
-          <li>
-            <%= human.name %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </body>
-</html>
+<ul>
+  <% Human.all.each do |human| %>
+    <li>
+      <%= human.name %>
+    </li>
+  <% end %>
+</ul>
