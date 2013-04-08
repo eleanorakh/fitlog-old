@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <ul>
+      <% Human.all.each do |human| %>
+        <li>
+          <%= human.name %>
+        </li>
+      <% end %>
+    </ul>
+  </body>
+</html>

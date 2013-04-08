@@ -22,3 +22,7 @@ get '/human/:id' do
   @human = Human.get(params[:id])
   erb :show
 end
+
+get '/' do
+  erb :index
+end
