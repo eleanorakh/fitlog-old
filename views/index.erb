@@ -3,7 +3,7 @@
 <ul>
   <% Human.all.each do |human| %>
     <li>
-      <%= human.name %>
+      <a href='/human/<%= human.id %>'><%= human.name %></a>
     </li>
   <% end %>
 </ul>
