@@ -4,6 +4,7 @@
   <% Human.all.each do |human| %>
     <li>
       <a href='/human/<%= human.id %>'><%= human.name %></a>
+      (<%= human.fitness_level %>)
     </li>
   <% end %>
 </ul>
